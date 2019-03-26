@@ -83,6 +83,15 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('beforeinstallprompt', event => {
-    event.preventDefault();
-    return false;
+    // Determine the user's choice - returned as a Promise
+    event.userChoice.then(result => {
+        console.log(result.outcome);
+
+        // Based on the user's choice, decide how to proceed
+        if(result.outcome == 'dismissed') {
+            // Send to analytics
+        } else {
+            // Send to analytics
+        }
+    });
 });
